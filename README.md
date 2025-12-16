@@ -39,21 +39,48 @@ If you want to run this locally:
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/yourusername/study-buddy.git](https://github.com/yourusername/study-buddy.git)
+git clone [https://github.com/](https://github.com/)[YOUR_USERNAME]/study-buddy.git
 cd study-buddy
+````
 
 **2. Install Dependencies**
 
-Bash
-
+```bash
 pip install -r requirements.txt
-3. Set up Environment Variables Create a .env file in the root directory and add your Groq API key:
+```
 
-Ini, TOML
+**3. Set up Environment Variables**
+Create a `.env` file in the root directory and add your Groq API key:
 
+```ini
 GROQ_API_KEY=gsk_your_actual_key_here
-4. Run the App
+```
 
-Bash
+**4. Run the App**
 
+```bash
 streamlit run app.py
+```
+
+## 📂 Project Structure
+
+```text
+├── app.py              # Main Streamlit application (Frontend)
+├── rag_engine.py       # Core logic (Loading, Chunking, Vector Store, Chain)
+├── requirements.txt    # Project dependencies
+├── .env                # API Keys (Not uploaded to GitHub)
+└── README.md           # Documentation
+```
+
+## 🔮 Future Improvements
+
+  * Add support for image recognition (OCR) in slides.
+  * Implement "Hybrid Search" (Keyword + Semantic) for better accuracy.
+  * Add a "Quiz Mode" to generate test questions from notes.
+
+-----
+
+*Created by SREE*
+
+```
+```
