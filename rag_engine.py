@@ -1,6 +1,6 @@
 import os
 import tempfile
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader, UnstructuredPowerPointLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter # Fixed in previous step
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -103,5 +103,6 @@ def get_rag_chain(vectorstore):
     rag_chain = create_retrieval_chain(retriever, question_answer_chain)
     
     return rag_chain
+
 
 
