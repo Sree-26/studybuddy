@@ -39,7 +39,7 @@ If you want to run this locally:
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/](https://github.com/)[YOUR_USERNAME]/study-buddy.git
+git clone [https://github.com/](https://github.com/)Sree-26/study-buddy.git
 cd study-buddy
 ````
 
