@@ -1,14 +1,15 @@
 import os
-from langchain_community.document_loaders import PyPDFLoader, UnstructuredPowerPointLoader
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+import tempfile
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter # Fixed in previous step
+from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
 from langchain_groq import ChatGroq
-from langchain.chains import create_retrieval_chain
+
+# UPDATED IMPORTS HERE
+from langchain.chains.retrieval import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.documents import Document
-import tempfile
 
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 PERSIST_DIRECTORY = "./chroma_db"
@@ -102,4 +103,5 @@ def get_rag_chain(vectorstore):
     rag_chain = create_retrieval_chain(retriever, question_answer_chain)
     
     return rag_chain
+
 
