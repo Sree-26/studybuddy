@@ -9,3 +9,5 @@ langchain-groq
 python-dotenv
 unstructured
 sentence-transformers
+pysqlite3-binary
+
