@@ -41,3 +41,19 @@ If you want to run this locally:
 ```bash
 git clone [https://github.com/yourusername/study-buddy.git](https://github.com/yourusername/study-buddy.git)
 cd study-buddy
+
+**2. Install Dependencies**
+
+Bash
+
+pip install -r requirements.txt
+3. Set up Environment Variables Create a .env file in the root directory and add your Groq API key:
+
+Ini, TOML
+
+GROQ_API_KEY=gsk_your_actual_key_here
+4. Run the App
+
+Bash
+
+streamlit run app.py
