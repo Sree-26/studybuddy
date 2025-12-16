@@ -2,6 +2,7 @@ streamlit
 langchain
 langchain-community
 langchain-huggingface
+langchain-text-splitters
 chromadb
 pypdf
 python-pptx
@@ -10,4 +11,5 @@ python-dotenv
 unstructured
 sentence-transformers
 pysqlite3-binary
+
 
