@@ -2,7 +2,7 @@ import os
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-import os
+import streamlit as st
 import time
 from dotenv import load_dotenv
 from rag_engine import load_documents, chunk_documents, create_vector_store, get_rag_chain
@@ -107,5 +107,6 @@ else:
             "content": answer,
             "sources": sources
         })
+
 
 
