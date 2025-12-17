@@ -66,15 +66,29 @@ def chunk_documents(documents):
     return chunks
 
 def create_vector_store(chunks):
+    """
+    Creates a new vector store. 
+    CRITICAL FIX: Deletes the existing DB to prevent duplicate data.
+    """
+    
+    # 1. Check if the DB exists and delete it
+    if os.path.exists(PERSIST_DIRECTORY):
+        try:
+            shutil.rmtree(PERSIST_DIRECTORY)
+            print(f"Old vector store at {PERSIST_DIRECTORY} deleted. Starting fresh.")
+        except OSError as e:
+            print(f"Error: Could not delete old vector store. {e}")
+
+    # 2. Re-initialize the embedding model
     embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
     
-    # Create persistent Chroma vector store
-    # Should check if it exists or needs reset, for now we overwrite/add
+    # 3. Create the new store (This will create the directory again)
     vectorstore = Chroma.from_documents(
         documents=chunks, 
         embedding=embeddings,
         persist_directory=PERSIST_DIRECTORY
     )
+    
     return vectorstore
 
 def get_rag_chain(vectorstore):
@@ -103,6 +117,7 @@ def get_rag_chain(vectorstore):
     rag_chain = create_retrieval_chain(retriever, question_answer_chain)
     
     return rag_chain
+
 
 
 
