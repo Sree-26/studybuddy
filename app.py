@@ -171,9 +171,7 @@ def main():
 
         # Generate Response
         if st.session_state.vectorstore is not None:
-            # 
-
-[Image of RAG retrieval process]
+            [Image of RAG retrieval process]
 
             with st.chat_message("assistant"):
                 message_placeholder = st.empty()
@@ -189,6 +187,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
