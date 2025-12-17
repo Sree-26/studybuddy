@@ -1,4 +1,5 @@
 import os
+import shutil
 import tempfile
 from langchain_community.document_loaders import PyPDFLoader, UnstructuredPowerPointLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter # Fixed in previous step
@@ -117,6 +118,7 @@ def get_rag_chain(vectorstore):
     rag_chain = create_retrieval_chain(retriever, question_answer_chain)
     
     return rag_chain
+
 
 
 
